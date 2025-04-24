@@ -1,39 +1,44 @@
 ## Embedded AI Data Logger for Predictive Maintenance
-This project...
-
----
-### 📌 Project Overview
-Does...
+This project implements a real-time predictive maintenance system on STM32 microcontrollers using Zephyr RTOS and TensorFlow Lite for Microcontrollers. The system collects sensor data, performs on-device anomaly detection, and enables early equipment failure prediction to minimize unplanned downtime.
 
 ---
 ### 🔧 Key Features
-✅ **Modular & Scalable Design**  
-&nbsp;&nbsp;&nbsp;🔹 **Factory Design Pattern** in C++ for dynamic creation of Machines.  
-&nbsp;&nbsp;&nbsp;🔹 **Plug-and-play expandability**: Add more Machines for larger deployments.  
+🏭 **Factory Method Pattern** for modular creation of machines and sensors
+⏱ **Real-time data logging** on STM32 with Zephyr RTOS
+🔍 **On-device anomaly detection** using TensorFlow Lite for Microcontrollers
+⚡ **Early failure prediction** to reduce unplanned downtime
 
-✅ **Multi-Sensor Monitoring**   
-&nbsp;&nbsp;&nbsp;🔥**Air Compressor**: Temperature, Pressure, Vibration       
-&nbsp;&nbsp;&nbsp;💧**Steam Boiler**: Temperature, Pressure  
-&nbsp;&nbsp;&nbsp;♨️**Electric Motor**: Tempearture    
-&nbsp;&nbsp;&nbsp;*( )*   
-
-✅ **On-Device Detection**   
-
-### **Modular & Scalar Machine Creation with Factory Design Pattern**
-Allows for creation ...
+---
+### 🧱 **Modular & Scalar Machine Creation with Factory Design Pattern**
 
 🧩 **Factory Structure**
 ```
-                        ┌────────────────────┐  
-                        │       Sensor       │ → Abstract base class  
-                        └────────────────────┘  
-                         ▲        ▲        ▲  
-       ┌─────────────────┘        │        └─────────────────┐  
-       ▼                          ▼                          ▼  
-┌─────────────────┐       ┌────────────────────┐       ┌──────────────────┐  
-       Temp                      Pressure                   Vibration  
-└─────────────────┘       └────────────────────┘       └──────────────────┘
+                        ┌────────────────────┐
+                        │   SensorFactory    │ ← Abstract Creator
+                        └────────────────────┘
+                                  ▲
+                                  │
+                ┌─────────────────┴─────────────────┐
+                │                                   │
+       ┌─────────────────┐                ┌──────────────────┐
+       │  createSensor() │                │ Machine Creation │
+       └─────────────────┘                └──────────────────┘
+      Creates sensor objects              Uses factory to build
+    (Temp, Pressure, Vibration)            complete machines
 ```
+
+⚙️ **Machine-Sensor Configuration**
+| `Machine Type`        |   Sensors                        |
+|-----------------------|----------------------------------|
+| `AIR_COMPRESSOR`      | Temperature, Pressure, Vibration |
+| `STEAM_BOILER`        | Temperature, Pressure            |
+| `ELECTRIC_MOTOR`      | Temperature                      |
+
+`Machine Type` | Sensors  
+--------------|---------
+`AIR_COMPRESSOR` | Temperature, Pressure, Vibration  
+`STEAM_BOILER` | Temperature, Pressure  
+`ELECTRIC_MOTOR` | Temperature  
 
 ---
 ### 🏗 System Architecture
