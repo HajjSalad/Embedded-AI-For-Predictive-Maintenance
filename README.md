@@ -28,24 +28,19 @@ This project implements a real-time predictive maintenance system on STM32 micro
 ```
 
 ⚙️ **Machine-Sensor Configuration**  
-Each industrial machine is equipped with specific sensors for predictive maintenance:  
-1️⃣ **`AIR_COMPRESSOR`**  
-- 📊 **Temperature**: `60-100°C`    
-  _Normal operating range for bearing and oil temperature_  
-- 📏 **Pressure**: `72-145 psi`    
-  _Optimal compression range_  
-- 📳 **Vibration**: `0.5-2.0 mm/s`   
-  _Acceptable mechanical vibration levels_  
+Each industrial machine is equipped with specific sensors for predictive maintenance: 
 
+1️⃣ **`AIR_COMPRESSOR`**  
+&nbsp;&nbsp;&nbsp;&nbsp;📊 **Temperature**: `60-100°C` • 📏 **Pressure**: `72-145 psi` • 📳 **Vibration**: `0.5-2.0 mm/s`   
+&nbsp;&nbsp;&nbsp;&nbsp;_Monitors overheating, pressure fluctuations, and mechanical wear_ 
+ 
 2️⃣ **`STEAM_BOILER`**  
-- 📊 **Temperature**: `150-250°C`    
-  _Safe steam generation range_  
-- 📏 **Pressure**: `87-360 psi`    
-  _Working pressure limits_  
+&nbsp;&nbsp;&nbsp;&nbsp;📊 **Temperature**: `150-250°C` • 📏 **Pressure**: `87-360 psi`     
+&nbsp;&nbsp;&nbsp;&nbsp;_Tracks thermal efficiency and safety thresholds_
 
 3️⃣**`ELECTRIC_MOTOR`**  
-- 📊 **Temperature**: `60-105°C`    
-  _Winding insulation safety range_
+&nbsp;&nbsp;&nbsp;&nbsp;📊 **Temperature**: `60-105°C`    
+&nbsp;&nbsp;&nbsp;&nbsp;_Winding insulation safety range_
   
 ---
 ### 🏗 System Architecture
