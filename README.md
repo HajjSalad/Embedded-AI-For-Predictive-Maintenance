@@ -1,7 +1,9 @@
 ## Embedded AI Data Logger for Predictive Maintenance
+This project...
 
 ---
 ### 📌 Project Overview
+Does...
 
 ---
 ### 🔧 Key Features
@@ -10,14 +12,28 @@
 &nbsp;&nbsp;&nbsp;🔹 **Plug-and-play expandability**: Add more Machines for larger deployments.  
 
 ✅ **Multi-Sensor Monitoring**   
-&nbsp;&nbsp;&nbsp;🔥**Air Compressor**: Temperature, Pressure, Vibration     
-&nbsp;&nbsp;&nbsp;💧**Steam Boiler**: Temperature, Pressure
+&nbsp;&nbsp;&nbsp;🔥**Air Compressor**: Temperature, Pressure, Vibration       
+&nbsp;&nbsp;&nbsp;💧**Steam Boiler**: Temperature, Pressure  
 &nbsp;&nbsp;&nbsp;♨️**Electric Motor**: Tempearture    
 &nbsp;&nbsp;&nbsp;*( )*   
 
 ✅ **On-Device Detection**   
- 
 
+### **Modular & Scalar Machine Creation with Factory Design Pattern**
+Allows for creation ...
+
+🧩 **Factory Structure**
+```
+                        ┌────────────────────┐  
+                        │       Sensor       │ → Abstract base class  
+                        └────────────────────┘  
+                         ▲        ▲        ▲  
+       ┌─────────────────┘        │        └─────────────────┐  
+       ▼                          ▼                          ▼  
+┌─────────────────┐       ┌────────────────────┐       ┌──────────────────┐  
+       Temp                      Pressure                   Vibration  
+└─────────────────┘       └────────────────────┘       └──────────────────┘
+```
 
 ---
 ### 🏗 System Architecture
