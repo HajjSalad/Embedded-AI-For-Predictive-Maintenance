@@ -28,24 +28,12 @@ This project implements a real-time predictive maintenance system on STM32 micro
 ```
 
 ⚙️ **Machine-Sensor Configuration**
-<table>
-  <tr>
-    <th>Machine Type</th>
-    <th>Sensors</th>
-  </tr>
-  <tr>
-    <td><code>AIR_COMPRESSOR</code></td>
-    <td>Temperature, Pressure, Vibration</td>
-  </tr>
-  <tr>
-    <td><code>STEAM_BOILER</code></td>
-    <td>Temperature, Pressure</td>
-  </tr>
-  <tr>
-    <td><code>ELECTRIC_MOTOR</code></td>
-    <td>Temperature</td>
-  </tr>
-</table>
+
+**Machine Type**   | **Sensors**
+`AIR_COMPRESSOR`   | Temperature, Pressure, Vibration
+`STEAM_BOILER`     | Temperature, Pressure
+`ELECTRIC_MOTOR`   | Temperature
+
 
 ---
 ### 🏗 System Architecture
