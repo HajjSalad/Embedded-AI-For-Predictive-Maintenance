@@ -38,9 +38,9 @@ Each industrial machine is equipped with specific sensors for predictive mainten
 &nbsp;&nbsp;&nbsp;&nbsp;📊 **Temperature**: `150-250°C` • 📏 **Pressure**: `87-360 psi`     
 &nbsp;&nbsp;&nbsp;&nbsp;_Tracks thermal efficiency and safety thresholds_
 
-3️⃣**`ELECTRIC_MOTOR`**  
-&nbsp;&nbsp;&nbsp;&nbsp;📊 **Temperature**: `60-105°C`    
-&nbsp;&nbsp;&nbsp;&nbsp;_Winding insulation safety range_
+3️⃣ **`ELECTRIC_MOTOR`**   
+&nbsp;&nbsp;&nbsp;&nbsp;📊 **Temperature**: `60-105°C`      
+&nbsp;&nbsp;&nbsp;&nbsp;_Winding insulation safety range_  
   
 ---
 ### 🏗 System Architecture
