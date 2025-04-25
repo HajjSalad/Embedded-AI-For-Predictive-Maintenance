@@ -44,7 +44,7 @@ Each industrial machine is equipped with specific sensors for predictive mainten
 
 💡**Usage Example**
 ```c
-// Create a machine with appropriate sensors
+// Create a machine by providing the name and TYPE
 MachineHandle handle = create_machine("Compressor1", AIR_COMPRESSOR);
 
 // Set and read sensor values
@@ -58,34 +58,36 @@ destroy_machine(handle);
 ---
 ### 🏗 System Architecture
 ```
-[Sensors] → 
+[📡 Sensors] → [💻 STM32 (Zephyr RTOS)] → [🧠 TensorFlow Lite] → [⚠️ Anomaly Detection] → [📊 Logging/DFU]
 ```
-### 🛠️ Tools and Software
-𐂷 **Sensor Node**  
-&nbsp;&nbsp;&nbsp;⎔ **VS Code** - Code editor for STM32 firmware development       
-&nbsp;&nbsp;&nbsp;⎔ dfu-utils -        
-&nbsp;&nbsp;&nbsp;⎔ CMake -   
+### 🛠️ Tools and Software 
+&nbsp;&nbsp;&nbsp;⎔ **VS Code** - Primary IDE for STM32 firmware development  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• Extensions: Cortex-Debug, Zephyr IDE, CMake Tools  
+&nbsp;&nbsp;&nbsp;⎔ **Zephyr RTOS** - Real-time operating system for resource-constrained devices  
+&nbsp;&nbsp;&nbsp;⎔ **Tensflow Lite for MCUs** - On-device ML inference (quantized models)   
+&nbsp;&nbsp;&nbsp;⎔ **CMake** - Build system for Zephyr projects  
+&nbsp;&nbsp;&nbsp;⎔ **dfu-utils** - Firmware updates via USB DFU protocol           
 
 ---
 ### 📂 Project Code Structure
 ```
-📁 Data-Logger-Predictive-Maintenance/
-│── 📁 src/
-│   ├── 📄 main.c                             (Entry point of the program)
-│   ├── 📄 sensor.cpp / .h                    ()
-│   ├── 📄 sensor_wrapper.cpp / .h            ()
-│   ├── 📄 tflite_wrapper.cpp / .h            ()
-│   ├── 📄 autoencoder_model.cc               ()
-│── 📁 CMakeLists.txt/
-│── 📁 prj.conf/
-│── 📁 sample.yaml/
+📁 Data-Logger-Predictive-Maintenance/   
+│── 📁 src/                                   (Core application source)
+│   ├── 📄 main.c                             (Zephyr application entry point)
+│   ├── 📄 sensor.cpp / .h                    (Sensor base class + implementations)
+│   ├── 📄 sensor_wrapper.cpp / .h            (C-compatible sensor interface)
+│   ├── 📄 tflite_wrapper.cpp / .h            (TensorFlow Lite inference interface)
+│   ├── 📄 autoencoder_model.cc / .h          (Embedded ML model definition)
+│── 📁 CMakeLists.txt/                        (Build system configuration)
+│── 📁 prj.conf/                              (Zephyr kernel config)
+│── 📁 sample.yaml/                           
 │── 📁 tflite-micro/
-│   ├── 📄 tensorflow/                        ()
-│   │   ├── 📄 lite                           () 
+│   ├── 📄 tensorflow/                        
+│   │   ├── 📄 lite                           (TensorFlow Lite for Microcontrollers) 
 │── 📁 data/
-│   ├── 📄 simulated_data.py                 (Python script to simulate sensor data)
+│   ├── 📄 simulated_data.py                 (Sensor data simulator)
 │   ├── 📄 simulated_data.zip                (Compressed simulated sensor data)
-│   ├── 📄 autoencoder.tflite                
+│   ├── 📄 autoencoder.tflite                (Quantized TF Lite model)                
 │   ├── 📄 simulated_data                    
 │   │   ├── 📄 machine_1                     (Machine type 1: Air Compressor)
 │   │   │   ├── 📄 machine_1_temp.csv        (Temp sensor values)
@@ -96,5 +98,5 @@ destroy_machine(handle);
 │   │   │   ├── 📄 machine_2_pressure.csv    (Pressure sensor values)
 │   │   ├── 📄 machine_3                     (Machine type 3: Electric Motor)
 │   │   │   ├── 📄 machine_3_temp.csv        (Temp sensor values)
-│── 📄 README.md  (Documentation)
+│── 📄 README.md                             (Documentation)
 ```
