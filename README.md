@@ -42,50 +42,6 @@ Each industrial machine is equipped with specific sensors for predictive mainten
     (Temp, Pressure, Vibration)            complete machines
 ```
 
-**Sensor Hierarchy** (`sensor.h`)
-```cpp
-class Sensor {  // Abstract Product
-    virtual void setValue(float) = 0;
-    virtual float readValue() = 0;
-    virtual std::string getType() = 0;
-};
-
-class TempSensor : public Sensor { /*...*/ };     // Concrete Products
-class PressureSensor : public Sensor { /*...*/ };
-class VibrationSensor : public Sensor { /*...*/ };
-```
-
-**Sensor Factory** (`sensor.h`)
-```cpp
-class SensorFactory {  // Creator
-public:
-    static std::unique_ptr<Sensor> createSensor(const std::string& type) {
-        if (type == "Temperature") return make_unique<TempSensor>();
-        if (type == "Pressure") return make_unique<PressureSensor>();
-        if (type == "Vibration") return make_unique<VibrationSensor>();
-        return nullptr;
-    }
-};
-```
-
-**Machine Integration** (`sensor.h`)
-```cpp
-class Machine {
-    MachineType type;
-    vector<unique_ptr<Sensor>> sensors;
-    
-public:
-    Machine(const string& name, 
-            const vector<string>& sensorTypes,
-            MachineType machineType) {
-        // Uses SensorFactory to populate sensors
-        for (const auto& type : sensorTypes) {
-            sensors.push_back(SensorFactory::createSensor(type));
-        }
-    }
-};
-```
-
 💡**Usage Example**
 ```c
 // Create a machine with appropriate sensors
