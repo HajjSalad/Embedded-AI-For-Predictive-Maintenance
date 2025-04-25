@@ -62,7 +62,7 @@ destroy_machine(handle);
 ```
 ### 🛠️ Tools and Software 
 &nbsp;&nbsp;&nbsp;⎔ **VS Code** - Primary IDE for STM32 firmware development  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• Extensions: Cortex-Debug, Zephyr IDE, CMake Tools  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;• Extensions: Cortex-Debug, Zephyr IDE, CMake Tools  
 &nbsp;&nbsp;&nbsp;⎔ **Zephyr RTOS** - Real-time operating system for resource-constrained devices  
 &nbsp;&nbsp;&nbsp;⎔ **Tensflow Lite for MCUs** - On-device ML inference (quantized models)   
 &nbsp;&nbsp;&nbsp;⎔ **CMake** - Build system for Zephyr projects  
