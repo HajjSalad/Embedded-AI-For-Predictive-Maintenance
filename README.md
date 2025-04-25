@@ -3,10 +3,10 @@ This project implements a real-time predictive maintenance system on STM32 micro
 
 ---
 ### 🔧 Key Features
-🏭 **Factory Method Pattern** for modular creation of machines and sensors
-⏱ **Real-time data logging** on STM32 with Zephyr RTOS
-🔍 **On-device anomaly detection** using TensorFlow Lite for Microcontrollers
-⚡ **Early failure prediction** to reduce unplanned downtime
+🏭 **Factory Method Pattern** for modular creation of machines and sensors  
+⏱ **Real-time data logging** on STM32 with Zephyr RTOS  
+🔍 **On-device anomaly detection** using TensorFlow Lite for Microcontrollers  
+⚡ **Early failure prediction** to reduce unplanned downtime  
 
 ---
 ### 🧱 **Modular & Scalar Machine Creation with Factory Design Pattern**
