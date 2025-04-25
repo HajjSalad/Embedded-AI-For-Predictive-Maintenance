@@ -87,7 +87,7 @@ public:
 ```
 
 💡**Usage Example**
-```
+```c
 // Create a machine with appropriate sensors
 MachineHandle handle = create_machine("Compressor1", AIR_COMPRESSOR);
 
